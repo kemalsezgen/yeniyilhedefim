@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <p>Yeni Yıl Hedefim</p>
     </>
   )
 }
