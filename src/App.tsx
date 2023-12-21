@@ -1,9 +1,15 @@
+import Header from "./components/Header"
+import MovieContainer from "./components/Movie/MovieContainer"
+
 function App() {
 
   return (
-    <>
-      <p>Yeni Yıl Hedefim</p>
-    </>
+    <div className="container">
+      <Header />
+      <div className="content">
+        <MovieContainer />
+      </div>
+    </div>
   )
 }
 
