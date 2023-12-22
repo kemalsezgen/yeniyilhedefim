@@ -5,7 +5,8 @@
   text-align: center;
   overflow-x: auto;
   gap: 1rem;
-  background-color: #5a5a5a;
+  background-color: var(--lowWhite);
+  border: 2px solid var(--deepRed);
   border-radius: 10px;
   margin-top: 20px;
   flex: 1 1 700px;
@@ -21,7 +22,10 @@
 .movie-box {
   min-width: 300px;
   margin-right: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  position: relative; /* '+' işaretini konumlandırmak için */
+  cursor: pointer; /* Fare üzerine geldiğinde imlec şeklini değiştir */
+  transition: all 0.3s ease; /* Geçiş efektleri yumuşak olsun */
 }
 
 .movie-list {
@@ -31,6 +35,38 @@
 }
 
 .movie-box img {
-  max-width: 250px;
+  max-width: 200px;
   height: auto;
+}
+
+.movie-img img {
+  width: 100%; /* Konteynerin genişliğini dolduracak şekilde ayarla */
+  height: 300px; /* Resimler için sabit bir yükseklik belirle */
+  object-fit: contain; /* Tüm resmi içerecek şekilde ayarla */
+  background-color: #000; /* Etrafında boşluk oluşursa, arka plan rengini siyah yap */
+  margin: 1rem 0;
+}
+
+.movie-box .plus-icon .minus-icon {
+  position: absolute;
+  transform: translate(-50%, -50%); /* Koordinat sistemini '+' işaretinin ortasına göre ayarla */
+  transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+}
+
+.plus-icon {
+  color: green;
+}
+
+.minus-icon {
+  color: red;
+}
+
+.movie-box.notSelected .minus-icon {
+  display: none;
+  transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+}
+
+.movie-box.selected .plus-icon {
+  display: none;
+  transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
 }

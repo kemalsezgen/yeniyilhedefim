@@ -1,3 +1,11 @@
+:root {
+  --deepRed: #8E0D3C;
+  --blackCurrant: #1D1842;
+  --orange: #EF3B33; 
+  --rosePink: #FDA1A2;
+  --lowWhite: #F0F0F0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +30,7 @@
 
 .header-container p {
   font-size: 36px;
-  color: #d35400;
+  color: var(--deepRed);
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -44,9 +52,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d35400;
-  /* Örnek arka plan rengi */
-  color: aliceblue;
+  background-color: var(--deepRed);
+  color: var(--lowWhite);
   margin: 0 10px;
   padding: 10px;
   border-radius: 10px;
