@@ -41,25 +41,17 @@
   }
   
   .book-img img {
-    width: 100%; /* Konteynerin genişliğini dolduracak şekilde ayarla */
-    height: 300px; /* Resimler için sabit bir yükseklik belirle */
-    object-fit: contain; /* Tüm resmi içerecek şekilde ayarla */
-    background-color: #000; /* Etrafında boşluk oluşursa, arka plan rengini siyah yap */
+    width: 100%;
+    height: 300px; 
+    object-fit: contain;
+    background-color: #000;
     margin: 1rem 0;
   }
   
   .book-box .plus-icon .minus-icon {
     position: absolute;
-    transform: translate(-50%, -50%); /* Koordinat sistemini '+' işaretinin ortasına göre ayarla */
-    transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
-  }
-  
-  .plus-icon {
-    color: green;
-  }
-  
-  .minus-icon {
-    color: red;
+    transform: translate(-50%, -50%);
+    transition: visibility 0s, opacity 0.3s ease;
   }
   
   .book-box.notSelected .minus-icon {
