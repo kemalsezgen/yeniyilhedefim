@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import MovieContainer from "./components/Movie/MovieContainer"
+import BookContainer from "./components/Book/BookContainer"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <div className="content">
         <MovieContainer />
+        <BookContainer />
       </div>
     </div>
   )

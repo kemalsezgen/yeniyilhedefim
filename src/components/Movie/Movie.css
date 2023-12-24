@@ -14,8 +14,9 @@
 }
 
 .movie-container input {
-  padding: 10px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 16px;
   width: 99%;
 }
 

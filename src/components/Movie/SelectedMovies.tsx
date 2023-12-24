@@ -10,7 +10,7 @@ type MovieProps = {
 const SelectedMovies: React.FC<MovieProps> = ({ selectedMovies, onAddToList, onRemoveFromList }) => {
   return (
     <div className="selectedMovies-container">
-      <h2>2024 Film Listem</h2>
+      {selectedMovies.length > 0 ? (<h2>2024 MOVIE LIST</h2>) : null}
       <br />
       <div className="movie-list">
           {selectedMovies && selectedMovies.map((movie: Partial<Movie>, index) => (

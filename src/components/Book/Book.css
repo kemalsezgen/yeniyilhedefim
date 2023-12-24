@@ -1,0 +1,73 @@
+.book-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow-x: auto;
+    gap: 1rem;
+    background-color: var(--lowWhite);
+    border: 2px solid var(--deepRed);
+    border-radius: 10px;
+    margin-top: 20px;
+    flex: 1 1 700px;
+    padding: 20px 20px 20px 30px;
+  }
+  
+  .book-container input {
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 16px;
+    width: 99%;
+  }
+  
+  .book-box {
+    min-width: 300px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    position: relative; /* '+' işaretini konumlandırmak için */
+    cursor: pointer; /* Fare üzerine geldiğinde imlec şeklini değiştir */
+    transition: all 0.3s ease; /* Geçiş efektleri yumuşak olsun */
+  }
+  
+  .book-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+  
+  .book-box img {
+    max-width: 200px;
+    height: auto;
+  }
+  
+  .book-img img {
+    width: 100%; /* Konteynerin genişliğini dolduracak şekilde ayarla */
+    height: 300px; /* Resimler için sabit bir yükseklik belirle */
+    object-fit: contain; /* Tüm resmi içerecek şekilde ayarla */
+    background-color: #000; /* Etrafında boşluk oluşursa, arka plan rengini siyah yap */
+    margin: 1rem 0;
+  }
+  
+  .book-box .plus-icon .minus-icon {
+    position: absolute;
+    transform: translate(-50%, -50%); /* Koordinat sistemini '+' işaretinin ortasına göre ayarla */
+    transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+  }
+  
+  .plus-icon {
+    color: green;
+  }
+  
+  .minus-icon {
+    color: red;
+  }
+  
+  .book-box.notSelected .minus-icon {
+    display: none;
+    transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+  }
+  
+  .book-box.selected .plus-icon {
+    display: none;
+    transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+  }

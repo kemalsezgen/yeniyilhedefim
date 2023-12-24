@@ -11,18 +11,23 @@ type MovieResponse = Partial<Movie>;
 const MovieContainer = () => {
 
   const [movies, setMovies] = useState<MovieResponse[]>([]);
-  const [selectedMovies, setSelectedMovies] = useState<MovieResponse[]>([]);
+  const [popularMovies, setPopularMovies] = useState<MovieResponse[]>([]);
+  const [selectedMovies, setSelectedMovies] = useState<MovieResponse[]>(popularMovies);
   const [searchInput, setSearchInput] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    fetchPopularMovies();
+  }, []);
+
+  useEffect(() => {
     if (searchInput === '') {
-      setMovies([]);
+      setMovies(popularMovies);
     }
     if (searchInput) {
       findMoviesByTitle(searchInput);
     }
-  }, [searchInput]);
+  }, [searchInput, popularMovies]);
 
   useEffect(() => {
     selectedMovies.forEach(movie => {
@@ -36,10 +41,24 @@ const MovieContainer = () => {
       .then((response) => {
         setIsLoading(true);
         setMovies(response.data.results.filter((m: Movie) => m.poster_path !== null));
+        console.log(response.data)
         setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
+      })
+  }
+
+  const fetchPopularMovies = async () => {
+    await axios.get(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=26b46150aed602c1008beb3130ac634f`)
+      .then((response) => {
+        setIsLoading(true);
+        setPopularMovies(response.data.results.filter((m: Movie) => m.poster_path !== null));
+        console.log(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
       })
   }
 
@@ -67,14 +86,14 @@ const MovieContainer = () => {
 
   return (
     <div className="movie-container">
-      <h2>Yeni yılda izlemek istediğim filmler...</h2>
       <input
-        placeholder='search a movie'
+        placeholder='what are you going to watch in 2024?'
         onChange={e => handleInputChange(e.target.value)}
       />
+      {searchInput == '' && <h3>WHAT IS POPULAR?</h3>}
       {isLoading ? (<p>Loading...</p>) :
         <div className="movie-list">
-          {movies && movies.map((movie: Partial<Movie>, index) => (
+          {popularMovies && movies && movies.map((movie: Partial<Movie>, index) => (
             <MovieCard movie={movie} key={index} onAddToList={handleAddToList} isSelected={isSelectedMovie(movie)} onRemoveFromList={handleRemoveFromList}/>
           ))}
         </div>}
