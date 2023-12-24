@@ -24,9 +24,9 @@
     min-width: 300px;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    position: relative; /* '+' işaretini konumlandırmak için */
-    cursor: pointer; /* Fare üzerine geldiğinde imlec şeklini değiştir */
-    transition: all 0.3s ease; /* Geçiş efektleri yumuşak olsun */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease; 
   }
   
   .book-list {
@@ -56,10 +56,10 @@
   
   .book-box.notSelected .minus-icon {
     display: none;
-    transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+    transition: visibility 0s, opacity 0.3s ease;
   }
   
   .book-box.selected .plus-icon {
     display: none;
-    transition: visibility 0s, opacity 0.3s ease; /* Geçiş efektleri için */
+    transition: visibility 0s, opacity 0.3s ease;
   }
