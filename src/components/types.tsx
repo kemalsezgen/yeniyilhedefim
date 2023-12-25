@@ -8,6 +8,14 @@ export type Movie = {
 
 export type MovieResponse = Partial<Movie>;
 
+export type TvShow = {
+  id: string,
+  name: string,
+  poster_path: string,
+}
+
+export type TvShowResponse = Partial<Movie>;
+
 export type Book = {
   id: string,
   volumeInfo: {

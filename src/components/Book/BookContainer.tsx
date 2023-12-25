@@ -76,7 +76,7 @@ const BookContainer = () => {
   return (
     <div className="book-container">
       <input
-        placeholder='what are you going to read in 2024?'
+        placeholder='what are you going to read in 2024? choose some books to read.'
         onChange={e => handleInputChange(e.target.value)}
       />
       {isLoading ? (<p>Loading...</p>) :

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Book, BookResponse } from '../types';
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
@@ -25,11 +24,11 @@ const BookCard: React.FC<BookProps> = ({ book, onAddToList, isSelected, onRemove
 
   return (
     <div className={`book-box ${isSelected ? 'selected' : 'notSelected'}`} onClick={(e) => addOrRemove(e, book)}>
-      {bookTitle && bookTitle.length <= 50 ? <h2>{bookTitle}</h2> : <h2>{`${bookTitle?.substring(0, 50)} ...`}</h2>}
-      {authors && <h3>{`(${authors})`}</h3>}
       {thumbnail && <div className='book-img'><img src={thumbnail} alt={`${bookTitle} - poster`} /></div>}
       <div className="plus-icon"><FaPlusCircle size={40}/></div>
       <div className="minus-icon"><FaMinusCircle size={40}/></div>
+      {bookTitle && bookTitle.length <= 200 ? <h2>{bookTitle}</h2> : <h2>{`${bookTitle?.substring(0, 200)} ...`}</h2>}
+      {authors && <h3>{`(${authors})`}</h3>}
     </div>
   )
 }
