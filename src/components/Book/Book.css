@@ -21,8 +21,9 @@
   }
   
   .book-box {
-    min-width: 300px;
-    margin-right: 1rem;
+    border: 2px solid red;;
+    min-width: 354px;
+    max-width: 354px;
     margin-bottom: 1rem;
     position: relative;
     cursor: pointer;
@@ -38,6 +39,10 @@
   .book-box img {
     max-width: 200px;
     height: auto;
+  }
+
+  .book-box h2 {
+    margin: 20px 0;
   }
   
   .book-img img {

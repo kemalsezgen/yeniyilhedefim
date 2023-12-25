@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Movie, MovieResponse } from '../types';
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 

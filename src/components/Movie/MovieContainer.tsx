@@ -87,7 +87,7 @@ const MovieContainer = () => {
   return (
     <div className="movie-container">
       <input
-        placeholder='what are you going to watch in 2024?'
+        placeholder='what are you going to watch in 2024? choose some movies to watch.'
         onChange={e => handleInputChange(e.target.value)}
       />
       {searchInput == '' && <h3>WHAT IS POPULAR?</h3>}
